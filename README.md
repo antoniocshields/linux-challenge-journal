@@ -15,7 +15,6 @@ Username: root
 ---
 
 ### 2. What Linux am I running?
-
 Determine the Linux distribution and version running on your server.
 #command used: lsb_release -a
 The distribution name and version: Ubuntu 24.04.4 LTS
