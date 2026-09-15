@@ -8,10 +8,12 @@ BITA Kernel Crew · Cohort 1 · Sept 2026
 
 ## Day 1 — Get to Know Your Server: Assessment
 ### 1. Who am I?
+You are logged into a remote Linux server. Determine the username of the account you are currently using.
 
--You are logged into a remote Linux server. Determine the username of the account you are currently using.
--**command used:** whoami
--**Username:** root
+  **Command used:** whoami
+
+  **Username:** root
+
 ---
 
 ### 2. What Linux am I running?
