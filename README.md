@@ -10,8 +10,8 @@ BITA Kernel Crew · Cohort 1 · Sept 2026
 
 ### 1. Who am I?
 You are logged into a remote Linux server. Determine the username of the account you are currently using.
-#command used: whoami
-Username: root
+**command used:** whoami
+**Username:** root
 ---
 
 ### 2. What Linux am I running?
