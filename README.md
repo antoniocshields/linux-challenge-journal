@@ -103,8 +103,9 @@ Determine how much disk space is available on the filesystem containing the serv
 | tmpfs         |  46M |  12K |   46M |   1% | /run/user/0 |
 ##
 
-### 10. Identify the network connection
+### 10. Identify the network connection  
 
-Determine the network interface currently being used by the server and identify its IPv4 address.
+Determine the network interface currently being used by the server and identify its IPv4 address.  
 
-**Submit:** The interface name and IPv4 address.
+**_Command used:_** `ifconfig`  
+**The interface name and IPv4 address:** `eth0` and `159.89.84.175`
