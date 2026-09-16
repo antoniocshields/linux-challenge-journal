@@ -51,17 +51,27 @@ Determine whether any other users currently have active sessions on the server.
 ##
 
 ### 6. Examine the CPU
+
 Determine the architecture of the server's CPU and how many logical CPUs are available.
-#command used: lscpu
-The CPU architecture and logical CPU count: x86_64 and 1 logical CPU
----
 
-### 7. Investigate the storage devices
-Determine what block storage devices are attached to the server.
-#command used: 
-**Submit:** The names of the block devices and their approximate sizes.
+**_Command used:_** `lscpu`  
+**The CPU architecture and logical CPU count:** `x86_64 and 1 logical CPU`
+##
 
----
+### 7. Investigate the storage devices  
+
+Determine what block storage devices are attached to the server.  
+
+**_command used:_** `lsblk` 
+**The names of the block devices and their approximate sizes.**  
+`NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS`  
+`vda     253:0    0   10G  0 disk`  
+`├─vda1  253:1    0    9G  0 part /`  
+`├─vda14 253:14   0    4M  0 part`  
+`├─vda15 253:15   0  106M  0 part /boot/efi`  
+`└─vda16 259:0    0  913M  0 part /boot`  
+`vdb     253:16   0  490K  1 disk`  
+##
 
 ### 8. Check memory availability
 
