@@ -79,7 +79,7 @@ Determine what block storage devices are attached to the server.
 Determine how much physical memory the server has and how much is currently available for use.  
 
 **_Command used:_** `free -h`  
-**Total memory and available memory:**  
+**Total memory and available memory:**    
 |              | total     |  used     | free    | shared | buff/cache | available |  
 | ------------ | ---------:| ---------:| -------:| ------:| ----------:| ---------:|  
 | Mem:         | 458Mi     | 156Mi     | 45Mi    |  4.0Mi |      280Mi |     301Mi |  
@@ -88,11 +88,20 @@ Determine how much physical memory the server has and how much is currently avai
 
 ### 9. Check filesystem capacity  
 
-Determine how much disk space is available on the filesystem containing the server's root directory.
+Determine how much disk space is available on the filesystem containing the server's root directory.  
 
-**Submit:** Total capacity, used capacity, available capacity, and percentage used.
-
----
+**_Command Used:_** `df -h`  
+**Total capacity, used capacity, available capacity, and percentage used:**  
+| Filesystem    | Size | Used | Avail | Use% | Mounted on  |
+| ------------- | ----:| ----:| -----:| ----:| ----------- |
+| tmpfs         |  46M | 1.0M |   45M |   3% | /run        |
+| /dev/vda1     | 8.7G | 2.2G |  6.6G |  25% | /           |
+| tmpfs         | 230M |    0 |  230M |   0% | /dev/shm    | 
+| tmpfs         | 5.0M |    0 |  5.0M |   0% | /run/lock   |
+| /dev/vda16    | 881M | 117M |  703M |  15% | /boot       |
+| /dev/vda15    | 105M | 6.2M |   99M |   6% | /boot/efi   |
+| tmpfs         |  46M |  12K |   46M |   1% | /run/user/0 |
+##
 
 ### 10. Identify the network connection
 
