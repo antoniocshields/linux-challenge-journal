@@ -80,9 +80,9 @@ Determine how much physical memory the server has and how much is currently avai
 
 **_Command used:_** `free -h`  
 **Total memory and available memory:**  
-|              | total     |  used     | free    | shared | buff/cache  | available |  
-| ------------ |:---------:|:---------:|:-------:|:------:|:-----------:| ---------:|  
-| Mem:         | 458Mi     | 156Mi     | 45Mi    |  4.0Mi |      280Mi  |     301Mi |  
+|              | total     |  used     | free    | shared | buff/cache | available |  
+| ------------ | ---------:| ---------:| -------:| ------:| ----------:| ---------:|  
+| Mem:         | 458Mi     | 156Mi     | 45Mi    |  4.0Mi |      280Mi |     301Mi |  
 | Swap:        |    0B     |    0B     |   0B    |
 ##
 
