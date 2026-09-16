@@ -62,26 +62,31 @@ Determine the architecture of the server's CPU and how many logical CPUs are ava
 
 Determine what block storage devices are attached to the server.  
 
-**_command used:_** `lsblk` 
-**The names of the block devices and their approximate sizes.**  
-`NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS`  
-`vda     253:0    0   10G  0 disk`  
-`├─vda1  253:1    0    9G  0 part /`  
-`├─vda14 253:14   0    4M  0 part`  
-`├─vda15 253:15   0  106M  0 part /boot/efi`  
-`└─vda16 259:0    0  913M  0 part /boot`  
-`vdb     253:16   0  490K  1 disk`  
+**_Command used:_** `lsblk`   
+**The names of the block devices and their approximate sizes:**    
+| NAME    | MAJ:MIN | RM  | SIZE | RO  | TYPE | MOUNTPOINTS |
+| ------  |:-------:|:---:|:----:|:---:|:----:| ----------- |
+| vda     | 253:0   | 0   | 10G  | 0   | disk |             |
+| ├─vda1  | 253:1   | 0   | 9G   | 0   | part | /           |
+| ├─vda14 | 253:14  | 0   | 4M   | 0   | part |             |
+| ├─vda15 | 253:15  | 0   | 106M | 0   | part | /boot/efi   |
+| └─vda16 | 259:0   | 0   | 913M | 0   | part | /boot       |
+| vdb     | 253:16  | 0   | 490K | 1   | disk |             |  
 ##
 
-### 8. Check memory availability
+### 8. Check memory availability  
 
-Determine how much physical memory the server has and how much is currently available for use.
+Determine how much physical memory the server has and how much is currently available for use.  
 
-**Submit:** Total memory and available memory.
+**_Command used:_** `free -h`  
+**Total memory and available memory:**  
+|              | total     |  used     | free    | shared | buff/cache  | available |  
+| ------------ |:---------:|:---------:|:-------:|:------:|:-----------:| ---------:|  
+| Mem:         | 458Mi     | 156Mi     | 45Mi    |  4.0Mi |      280Mi  |     301Mi |  
+| Swap:        |    0B     |    0B     |   0B    |
+##
 
----
-
-### 9. Check filesystem capacity
+### 9. Check filesystem capacity  
 
 Determine how much disk space is available on the filesystem containing the server's root directory.
 
