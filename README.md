@@ -163,9 +163,10 @@ Inspect your home directory and determine how many entries are hidden files or h
 
 Display the contents of your home directory in a detailed listing and determine which entries are directories rather than ordinary files.
 
-**Submit:** The names of all directories in your home directory.
+**_Command used:_** `ls -la`  
+**The names of all directories in your home directory:** `., .., .cache, .cargo, .config, .local, .ssh, snap`
 
----
+##
 
 ### 7. Create a directory structure
 
@@ -177,17 +178,19 @@ linux-assessment/
     └── files/
 ```
 
-**Submit:** The command sequence you used.
+**_Command sequence you used:_** (step 1): `mkdir linux-assessment`, (step 2): `cd linux-assessment`, (step 3): `mkdir day2`, (step 4): `cd day2`, (step 5): `mkdir files`  
+**End result:** `/root/linux-assessment/day2/files`
 
----
+##
 
 ### 8. Create and relocate a file
 
 Create an empty file named `navigation-test` in your home directory. Then move it into the `files` directory you created in Question 7.
 
-**Submit:** The final path of the file.
+**_Command sequence you used:_** (step 1): `touch navigation-test`, (step 2): `mv navigation-test ./linux-assessment/day2/files`  
+**Final path of the file:** `/root/linux-assessment/day2/files/navigation-test`
 
----
+##
 
 ### 9. Move a directory
 
@@ -203,21 +206,28 @@ linux-assessment/
             └── navigation-test
 ```
 
-**Submit:** The final path of `navigation-test`.
+**_Command sequence you used:_** (step 1): `cd ./linux-assessment/day2`, (step 2): `mkdir archive`, (step 3): `mv files archive`  
+**Final path of `navigation-test`:** `/root/linux-assessment/day2/archive/files/navigation-test`
 
----
+##
 
 ### 10. Clean up
 
 Remove everything you created for this assessment without deleting anything that existed in your home directory before you began.
 
-**Submit:** A listing demonstrating that your `linux-assessment` directory no longer exists.
+**_Command sequence you used:_** (step 1): `rm ./linux-assessment/day2/archive/files/navigation-test`, (step 2): `rmdir ./linux-assessment/day2/archive/files`, (step 3): `rmdir ./linux-assessment/day2/archive`, (step 4): `rmdir ./linux-assessment/day2`, (step 5): `rmdir ./linux-assessment`  
+
+**A listing demonstrating that your `linux-assessment` directory no longer exists:**   
+**_Command used:_** `ls`  
+**Results:** `snap` (directory remaining)
+
+##
 
 ### Optional Challenge — Documentation
 
 A Linux administrator does not need to memorize every command.
 
-Without searching the web, use the documentation available on the server to determine **which command can show a concise description of another command based on a keyword or phrase**.
+Without searching the web, use the documentation available on the server to determine **which command can show a concise description of another command based on a keyword or phrase**?
 
-**Submit:** The command you discovered and a one-sentence explanation of what it does.
+**The command you discovered and a one-sentence explanation of what it does:** `apropos`, `-search the manual page names and descriptions for instances of the keyword`.
 
