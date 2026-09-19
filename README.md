@@ -118,41 +118,46 @@ Determine the network interface currently being used by the server and identify 
 
 Determine the complete filesystem path of your current location.
 
-**Submit:** The absolute path.
+**_Command used:_** `pwd`   
+**The absolute path:** `/root`
+##
 
----
 
 ### 2. Navigate using an absolute path
 
 Move to the system directory that contains the server's log files.
 
-**Submit:** The absolute path of the directory you are now in.
+**_Command used:_** `cd /var/log`  
+**The absolute path of the directory you are now in:** `/var/log`
 
----
+##
 
 ### 3. Navigate using a relative path
 
 From the directory containing the system logs, move one level upward and then into its `log` directory again using **only a relative path**.
 
-**Submit:** The resulting absolute path.
+**_Command used:_** (move one level upward) `cd ..`, (into log directory again with relative path) `cd log`    
+**The resulting absolute path:** `/var/log`
 
----
+##
 
 ### 4. Return home
 
 Without manually typing the full path to your home directory, return to your own home directory.
 
-**Submit:** The absolute path of your home directory.
+**_Command used:_** `cd`  
+**The absolute path of your home directory:** `/root`
 
----
+##
 
 ### 5. Find hidden files
 
 Inspect your home directory and determine how many entries are hidden files or hidden directories.
 
-**Submit:** The number of hidden entries you find.
+**_Command used:_** `ls -a`  
+**The number of hidden entries you find:** `14`
 
----
+##
 
 ### 6. Identify directories
 
