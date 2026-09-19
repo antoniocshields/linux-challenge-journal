@@ -231,3 +231,104 @@ Without searching the web, use the documentation available on the server to dete
 
 **The command you discovered and a one-sentence explanation of what it does:** `apropos`, `-search the manual page names and descriptions for instances of the keyword`.
 
+##
+
+## Day 3 — Power Trip! Assessment
+
+### 1. Identify running processes
+
+Determine which processes are currently running on your server.
+
+**Submit:** The process ID and name of the process associated with your current shell.
+
+---
+
+### 2. Find the most resource-intensive process
+
+Determine which currently running process is consuming the most CPU resources.
+
+**Submit:** Its process ID, name, and current CPU percentage.
+
+---
+
+### 3. Investigate a process
+
+Choose a running process other than your current shell and determine:
+
+* Which user owns it
+* Its process ID
+* Its parent process ID
+
+**Submit:** All three values.
+
+---
+
+### 4. Find your shell's parent
+
+Determine which process launched your current shell.
+
+**Submit:** The parent process's name and process ID.
+
+---
+
+### 5. Run a command in the background
+
+Start a command that will continue running for at least 30 seconds **without blocking your ability to enter additional commands**.
+
+**Submit:** The process ID assigned to the background process.
+
+---
+
+### 6. Locate your background process
+
+After starting the background process from Question 5, find it among the currently running processes.
+
+**Submit:** Its process ID and current status.
+
+---
+
+### 7. Stop a process
+
+Terminate the background process you created in Question 5.
+
+**Submit:** Evidence that the process is no longer running.
+
+---
+
+### 8. Find a process by name
+
+Determine whether there are currently any processes running that belong to the SSH service.
+
+**Submit:** The process ID(s) and process name(s), if present.
+
+---
+
+### 9. Monitor the system
+
+Open a live view of the processes running on the server. Identify the process currently consuming the most memory.
+
+**Submit:** Its process ID, name, and memory percentage.
+
+---
+
+### 10. Become another user
+
+Switch from your normal account to the administrative account available on your training server.
+
+Once switched, verify that your identity has changed.
+
+**Submit:** The username of the account you switched to, then return to your original account.
+
+---
+
+### Practical Challenge
+
+You accidentally start a command that continues running and appears to have taken control of your terminal.
+
+**Without closing your SSH connection**, regain control of the terminal while leaving the command available to be resumed later.
+
+**Submit:** Describe what you did and whether the command is still running afterward.
+
+This is particularly useful because it tests whether students understand **foreground vs. background processes and job control**, rather than merely memorizing process-management commands.
+
+
