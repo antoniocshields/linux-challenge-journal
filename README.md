@@ -239,17 +239,28 @@ Without searching the web, use the documentation available on the server to dete
 
 Determine which processes are currently running on your server.
 
-**Submit:** The process ID and name of the process associated with your current shell.
+**_Command used:_** `ps`
 
----
+**The process ID and name of the process associated with your current shell:**   
+| PID  | CMD  |
+| ---- | ---- |
+| 1069 | bash |
+| 1208 | ps   |
+
+##
 
 ### 2. Find the most resource-intensive process
 
 Determine which currently running process is consuming the most CPU resources.
 
-**Submit:** Its process ID, name, and current CPU percentage.
+**_Command used:_** `top`
 
----
+**Its process ID, name, and current CPU percentage:**
+| PID  | Name | %CPU |
+|:----:|:----:|:----:|
+| 1321 | top  | 0.3  |
+
+##
 
 ### 3. Investigate a process
 
@@ -259,57 +270,72 @@ Choose a running process other than your current shell and determine:
 * Its process ID
 * Its parent process ID
 
-**Submit:** All three values.
+**All three values:* `root`, `1178`, `2` 
 
----
+##
 
 ### 4. Find your shell's parent
 
 Determine which process launched your current shell.
 
-**Submit:** The parent process's name and process ID.
+**The parent process's name and process ID:** `sshd`, `1068`
 
----
+##
 
 ### 5. Run a command in the background
 
 Start a command that will continue running for at least 30 seconds **without blocking your ability to enter additional commands**.
 
-**Submit:** The process ID assigned to the background process.
+**_Command used:_** `sleep 10m &`
 
----
+**The process ID assigned to the background process:** `2105`
+
+##
 
 ### 6. Locate your background process
 
 After starting the background process from Question 5, find it among the currently running processes.
 
-**Submit:** Its process ID and current status.
+**_Command used:_** `ps aux`  
+**The process ID and current status:** `sleep`
 
----
+##
 
 ### 7. Stop a process
 
 Terminate the background process you created in Question 5.
 
-**Submit:** Evidence that the process is no longer running.
+**_Command used:_**  `kill 2105`  
+**Evidence that the process is no longer running:** Ran `ps aux` and at the bottom is says `sleep 10m Terminated`
 
----
+##
 
 ### 8. Find a process by name
 
 Determine whether there are currently any processes running that belong to the SSH service.
 
-**Submit:** The process ID(s) and process name(s), if present.
+**_Command used:_** pgrep -a ssh
+**The process ID(s) and process name(s), if present:**
+|  PID  | Process Name |
+|:-----:|:------------:|
+| 957   | sshd         |
+| 958   | sshd         |
+| 1068  | sshd         |
 
----
+##
 
 ### 9. Monitor the system
 
 Open a live view of the processes running on the server. Identify the process currently consuming the most memory.
 
-**Submit:** Its process ID, name, and memory percentage.
+**_Command used:_** `top`
 
----
+**Its process ID, name, and memory percentage:** 
+| PID  | Process Name | %Mem |
+|:----:|:------------:|:----:|
+|   1  | systemd      | 2.8  |
+
+##
 
 ### 10. Become another user
 
@@ -317,9 +343,17 @@ Switch from your normal account to the administrative account available on your 
 
 Once switched, verify that your identity has changed.
 
-**Submit:** The username of the account you switched to, then return to your original account.
+**_Commands used:_** `sudo -i`, `whoami`, and `exit`
 
----
+**The username of the account you switched to, then return to your original account:** 
+```
+(Step 1) Switched from user tonelo4 to root user using the sudo -i command.  
+(Step 2) Verified using the whoami command.  
+(Step 3) Used the exit command to exit root user and returned to user tonelo4.  
+(Step 4) Verified again using the whoami command.
+```
+
+##
 
 ### Practical Challenge
 
