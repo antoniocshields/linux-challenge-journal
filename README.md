@@ -361,8 +361,15 @@ You accidentally start a command that continues running and appears to have take
 
 **Without closing your SSH connection**, regain control of the terminal while leaving the command available to be resumed later.
 
-**Submit:** Describe what you did and whether the command is still running afterward.
+**Describe what you did and whether the command is still running afterward:**
+```
+(Step 1): Used a bash command to run test.sh which created a counter by ones.
+(Step 2): Since this was running on the foreground, I just hit 'CTRL-z' to stop the process.
+(Step 3): Used 'bg %1' to resume the bash test.sh (the '1' is the job number) from where it left off, but this time 'CTRL-z' was ineffective for background processes.
+(Step 4): Used 'ps aux' to retrieve the PID or just use 'kill %1' to terminate the process without closing the SSH connection.
+```
 
 This is particularly useful because it tests whether students understand **foreground vs. background processes and job control**, rather than merely memorizing process-management commands.
 
+##
 
