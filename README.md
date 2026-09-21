@@ -461,9 +461,11 @@ Locate the directory under `/usr` that contains the majority of user-facing exec
 
 Find one configuration file somewhere under `/etc` and one log file somewhere under `/var`.
 
-**Submit:** The complete path of each file and a one-sentence explanation of what type of information each contains.
+**The complete path of each file and a one-sentence explanation of what type of information each contains:**
+`/etc/debconf.conf` - main config file for debconf that tell debconf where to store data.
+`/var/log/dpkg.log` - logs history of installs, upgrades, removals, and purges of packages.
 
----
+##
 
 ### 10. Remove installed software
 
@@ -471,9 +473,11 @@ Uninstall **nano** using the system's package-management mechanism.
 
 Afterward, verify that the program is no longer available as an installed package.
 
-**Submit:** Evidence that the package has been successfully removed.
+**Evidence that the package has been successfully removed:**
+`2026-09-20 21:22:05 remove nano:amd64 7.2-2ubuntu0.2 <none>` in dpkg.log file,  
+`-bash: /usr/bin/nano: No such file or directory` when using the command: `nano testfile.txt`
 
----
+##
 
 ### Practical Challenge — Find the Right Place
 
@@ -483,12 +487,116 @@ You need to investigate a Linux server and are told:
 
 Without using a graphical file manager or searching the web, investigate these areas and identify **one interesting or useful file/directory in each location**.
 
-**Submit:**
+* `/etc`: `/etc/adduser.conf` + the configuration file with the default settings for `adduser` 
+* `/run`: `/run/multipath` + used to detect and coalesce multiple paths to devices
+* `/var`: `/var/log` + where system log files are stored
+* `/usr`: `/usr/bin` + directory where executable programs are stored
 
-* `/etc`: path + purpose
-* `/run`: path + purpose
-* `/var`: path + purpose
-* `/usr`: path + purpose
+##
+
+## Day 5 — More or Less
+
+### 1. Determine file size
+
+Find a file in `/var/log` that is larger than 1 KB.
+
+**Submit:** The file's complete path and its size.
+
+---
+
+### 2. Compare file sizes
+
+Identify the three largest regular files in a directory of your choice under `/var/log`.
+
+**Submit:** Their paths and sizes, ordered from largest to smallest.
+
+---
+
+### 3. Count lines
+
+Choose a text-based log file under `/var/log` and determine how many lines it contains.
+
+**Submit:** The filename and number of lines.
+
+---
+
+### 4. Count words
+
+Using the same log file, determine how many words it contains.
+
+**Submit:** The filename and word count.
+
+---
+
+### 5. Count characters
+
+Determine the number of characters contained in the same log file.
+
+**Submit:** The filename and character count.
+
+---
+
+### 6. Examine a large file safely
+
+Choose a log file containing enough text that displaying its entire contents would produce a substantial amount of terminal output.
+
+Determine:
+
+* What the first 10 lines contain
+* What the last 10 lines contain
+
+**Submit:** A brief description of each section.
+
+---
+
+### 7. Search within a file
+
+Choose a system log containing multiple entries and locate all entries containing a word of your choice that appears at least five times.
+
+**Submit:** The search term and number of matching lines.
+
+---
+
+### 8. Search case-insensitively
+
+Find occurrences of the word **error** in a suitable log file, treating `error`, `Error`, `ERROR`, etc. as equivalent.
+
+**Submit:** The number of matching lines.
+
+---
+
+### 9. Combine filtering and counting
+
+Find how many lines in a suitable log file contain the word **warning** (case-insensitive).
+
+**Submit:** The number of matching lines and the filename examined.
+
+---
+
+### 10. Inspect output one screen at a time
+
+Choose a sufficiently large text file and examine its contents without allowing the entire file to scroll past the terminal at once.
+
+While examining it, locate a particular piece of information near the middle of the file.
+
+**Submit:** The information you found and describe how you navigated through the file.
+
+---
+
+### Practical Challenge — Investigate a Log
+
+Choose one substantial log file under `/var/log`.
+
+Without opening it in a graphical editor, determine:
+
+1. Its size.
+2. Its number of lines.
+3. The first line.
+4. The last line.
+5. The three most common-looking message types or keywords you can identify.
+6. How many lines contain `error` or `warning`, ignoring capitalization.
+
+**Submit:** Your findings and the commands you used to obtain them.
 
 
 
