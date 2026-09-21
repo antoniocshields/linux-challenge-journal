@@ -373,3 +373,122 @@ This is particularly useful because it tests whether students understand **foreg
 
 ##
 
+## Day 4 — Installing Software & Exploring the File Structure
+
+### 1. Identify the package manager
+
+Determine which package-management system your Linux distribution uses.
+
+**The package manager's name:** Using Ubuntu 24.04.4, which is a debian-based distribution, so `apt` is the package manager.
+
+##
+
+### 2. Find a package
+
+Using the software repositories configured on the server, determine whether a text editor named **nano** is available for installation.
+
+**_Command used:_** `apt search "nano"`  
+**Whether it is available and the version that would be installed:**    
+`nano/noble-updates, noble-security 7.2-2ubuntu0.2 amd64 [installed, automatic]`
+
+##
+
+### 3. Install software
+
+Install **nano** using the system's normal software-management mechanism.
+
+**_Command used:_** `sudo apt install nano`
+
+**Evidence that the installation completed successfully:**
+```
+nano is already the newest version (7.2-2ubuntu0.2).
+nano set to manually installed
+0 upgraded, 0 newly installed, 0 to remove and 15 not upgraded.
+```
+##
+
+### 4. Verify the installation
+
+Determine where the executable for the newly installed text editor is located.
+
+**The complete filesystem path to the executable:** `/usr/bin/nano`
+
+##
+
+## 5. Find installed files
+
+Determine which files were installed as part of the **nano** package.
+
+**At least three paths belonging to the installed package:**  
+`/usr/share`, 
+`/usr/share/man/man1/nano.1.gz`, 
+`/usr/share/nano/autoconf.nanorc`
+
+##
+
+### 6. Explore `/etc`
+
+Investigate the `/etc` directory and identify the file that contains information about the Linux distribution currently running on the server.
+
+**The complete path to the file and the distribution name/version contained within it:**
+`/etc/os-release`
+Name = `Ubuntu`
+Version = `24.04.4 LTS (Noble Numbat)`
+
+##
+
+### 7. Explore `/var`
+
+Investigate `/var` and locate the directory where system log files are normally stored.
+
+**Its complete filesystem path and the names of three log files found there:**
+`/var/log`
+`apport.log`, `auth.log`, and `syslog`
+
+##
+
+### 8. Explore `/usr`
+
+Locate the directory under `/usr` that contains the majority of user-facing executable programs.
+
+**The complete path and the names of three programs found there:**
+`/usr/bin`
+`tcpdump`, `bash`, and `netstat`
+
+##
+
+### 9. Identify configuration vs. data
+
+Find one configuration file somewhere under `/etc` and one log file somewhere under `/var`.
+
+**Submit:** The complete path of each file and a one-sentence explanation of what type of information each contains.
+
+---
+
+### 10. Remove installed software
+
+Uninstall **nano** using the system's package-management mechanism.
+
+Afterward, verify that the program is no longer available as an installed package.
+
+**Submit:** Evidence that the package has been successfully removed.
+
+---
+
+### Practical Challenge — Find the Right Place
+
+You need to investigate a Linux server and are told:
+
+> “The configuration is probably under `/etc`, temporary/runtime information is somewhere under `/run`, logs are under `/var`, and installed programs are primarily under `/usr`.”
+
+Without using a graphical file manager or searching the web, investigate these areas and identify **one interesting or useful file/directory in each location**.
+
+**Submit:**
+
+* `/etc`: path + purpose
+* `/run`: path + purpose
+* `/var`: path + purpose
+* `/usr`: path + purpose
+
+
+
