@@ -500,17 +500,23 @@ Without using a graphical file manager or searching the web, investigate these a
 
 Find a file in `/var/log` that is larger than 1 KB.
 
-**Submit:** The file's complete path and its size.
+**_Command used:_** `ls -lh`  
+**The file's complete path and its size:** `/var/log/syslog.1` and file size is `1.5M`
 
----
+##
+
 
 ### 2. Compare file sizes
 
 Identify the three largest regular files in a directory of your choice under `/var/log`.
 
-**Submit:** Their paths and sizes, ordered from largest to smallest.
+**_Command used:_** `ls -lhS`
+**Their paths and sizes, ordered from largest to smallest:**   
+`/var/log/syslog.1` and file size is `1.5M`  
+`/var/log/cloud-init.log.1` and file size is `1.2M`  
+`/var/log/syslog` amd file size is `833K`  
 
----
+##
 
 ### 3. Count lines
 
