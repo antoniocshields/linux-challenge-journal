@@ -514,7 +514,7 @@ Identify the three largest regular files in a directory of your choice under `/v
 **Their paths and sizes, ordered from largest to smallest:**   
 `/var/log/syslog.1` and file size is `1.5M`  
 `/var/log/cloud-init.log.1` and file size is `1.2M`  
-`/var/log/syslog` amd file size is `833K`  
+`/var/log/syslog` and file size is `833K`  
 
 ##
 
@@ -522,25 +522,28 @@ Identify the three largest regular files in a directory of your choice under `/v
 
 Choose a text-based log file under `/var/log` and determine how many lines it contains.
 
-**Submit:** The filename and number of lines.
+**_Command used:_** `sudo wc -l syslog`  
+**The filename and number of lines:** `syslog` and `6115`
 
----
+##
 
 ### 4. Count words
 
 Using the same log file, determine how many words it contains.
 
-**Submit:** The filename and word count.
+**_Command used:_** `sudo wc -w syslog`
+**The filename and word count:** `syslog` and `63545`
 
----
+##
 
 ### 5. Count characters
 
 Determine the number of characters contained in the same log file.
 
-**Submit:** The filename and character count.
+**_Command used:_** `sudo wc -m syslog`
+**The filename and character count:** `syslog` and `854620`
 
----
+##
 
 ### 6. Examine a large file safely
 
@@ -551,9 +554,10 @@ Determine:
 * What the first 10 lines contain
 * What the last 10 lines contain
 
-**Submit:** A brief description of each section.
+**A brief description of each section:** Used the command: `sudo head syslog.1` to show the first 10 lines of the syslog.1 file.
+Used the command: `sudo tail syslog.1` to show the last 10 lines of the the syslog.1 file.
 
----
+##
 
 ### 7. Search within a file
 
