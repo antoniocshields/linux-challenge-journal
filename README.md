@@ -554,8 +554,8 @@ Determine:
 * What the first 10 lines contain
 * What the last 10 lines contain
 
-**A brief description of each section:** Used the command: `sudo head syslog.1` to show the first 10 lines of the syslog.1 file.
-Used the command: `sudo tail syslog.1` to show the last 10 lines of the the syslog.1 file.
+**A brief description of each section:** Used the command: `sudo head syslog.1` to show the first 10 lines of the syslog.1 file.  
+Used the command: `sudo tail syslog.1` to show the last 10 lines of the syslog.1 file.
 
 ##
 
