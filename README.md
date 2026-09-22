@@ -563,9 +563,10 @@ Used the command: `sudo tail syslog.1` to show the last 10 lines of the syslog.1
 
 Choose a system log containing multiple entries and locate all entries containing a word of your choice that appears at least five times.
 
-**Submit:** The search term and number of matching lines.
+**_Command used:_** `grep "nano" dpkg.log`  
+**The search term and number of matching lines:** search of the word `nano` came back with 12 matching lines results.
 
----
+##
 
 ### 8. Search case-insensitively
 
