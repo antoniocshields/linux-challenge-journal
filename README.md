@@ -570,19 +570,23 @@ Choose a system log containing multiple entries and locate all entries containin
 
 ### 8. Search case-insensitively
 
-Find occurrences of the word **error** in a suitable log file, treating `error`, `Error`, `ERROR`, etc. as equivalent.
+Find occurrences of the word **error** in a suitable log file, treating `error`, `Error`, `ERROR`, etc. as equivalent.  
+**_Command used:_** `sudo grep -i --color=auto error syslog.1` (to see the actual results)   
+`sudo grep -ic --color=auto error syslog.1` (for the number of matching lines)
 
-**Submit:** The number of matching lines.
+**The number of matching lines:** `15`
 
----
+##
 
 ### 9. Combine filtering and counting
 
-Find how many lines in a suitable log file contain the word **warning** (case-insensitive).
+Find how many lines in a suitable log file contain the word **warning** (case-insensitive).  
 
-**Submit:** The number of matching lines and the filename examined.
+**_Command used:_** `sudo grep -ic error syslog.1`  
 
----
+**The number of matching lines and the filename examined:** `8` and `syslog.1`
+
+##
 
 ### 10. Inspect output one screen at a time
 
@@ -590,24 +594,32 @@ Choose a sufficiently large text file and examine its contents without allowing 
 
 While examining it, locate a particular piece of information near the middle of the file.
 
-**Submit:** The information you found and describe how you navigated through the file.
+**The information you found and describe how you navigated through the file:**  
+I used the command `sudo more /var/log/auth.log` to access the auth.log file. I used `more` instead of `less` because `more` gives you the percentage of the document you've gone through so far. I used the down arrow key to go down the document, which got me to 47% and from there I used the Enter key to get down the 50%. In the auth.log file, I see the session open and session closed from where I used the sudo command to gain root access at the time stamp provided.
 
----
+##
 
 ### Practical Challenge — Investigate a Log
 
 Choose one substantial log file under `/var/log`.
 
+**_File used:_** `syslog.1`
+
 Without opening it in a graphical editor, determine:
+1. Its size. **_Command used:_** `ls -lh syslog.1`  
+**_Results:_** `846K` 
+2. Its number of lines. **_Command used:_** `sudo wc -l syslog.1`  
+**_Results:_** `6202`
+3. The first line. **_Command used:_** `sudo head -1 syslog.1`  
+**_Results:_** `2026-09-20T15:59:29.471951+00:00 Tone-the-Server-September2026 systemd-modules-load[297]: Module 'i2c_dev' is built in`
+4. The last line. **_Command used:_** `sudo head -1 syslog.1`  
+**_Results:_** `2026-09-21T22:27:07.966551-04:00 Tone-the-Server-September2026 systemd[1]: Stopped snapd.seeded.service - Wait until snapd is fully seeded.`
+5. The three most common-looking message types or keywords you can identify. **_Command used:_** `sudo less syslog.1`  
+**_Results:_** Three most common keywords identified: `Finished`, `Starting`, and `Listening`
+6. How many lines contain `error` or `warning`, ignoring capitalization. **_Command used:_** `sudo grep -ic error syslog.1` and `sudo grep -ic error syslog.1`  
+**_Results:_** `15` and `8` 
 
-1. Its size.
-2. Its number of lines.
-3. The first line.
-4. The last line.
-5. The three most common-looking message types or keywords you can identify.
-6. How many lines contain `error` or `warning`, ignoring capitalization.
-
-**Submit:** Your findings and the commands you used to obtain them.
+##
 
 
 
