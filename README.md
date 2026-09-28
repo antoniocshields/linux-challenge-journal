@@ -621,5 +621,143 @@ Without opening it in a graphical editor, determine:
 
 ##
 
+## Day 6 — Editing Text Files
+
+### 1. Create a text file
+
+Create a new text file in your home directory named `day6-notes.txt`.
+
+**_Command used:_** `vim day6-notes.txt`  
+**The complete path to the file:** `/home/tonelo4/day6-notes.txt`
+
+##
+
+### 2. Add information
+
+Put the following three lines into the file:
+
+```text
+Linux
+System Administration
+Day 6
+```
+
+**Evidence that the file contains exactly those three lines:**  
+
+<img width="655" height="78" alt="Day 6 #2 " src="https://github.com/user-attachments/assets/39ce630b-568c-4e4c-87a2-ddfe621a64fd" />
+
+
+---
+
+### 3. Modify existing content
+
+Change the third line so that it contains the current day of the week instead of `Day 6`.
+
+**The resulting contents of the file:**
+
+<img width="625" height="96" alt="Day 6 #3 " src="https://github.com/user-attachments/assets/0f0dfc4f-f689-4484-9d28-760b9ac35061" />
+
+
+##
+
+### 4. Add a line
+
+Add a fourth line containing your Linux distribution's name.
+
+**The resulting contents:**
+
+<img width="667" height="245" alt="Day 6 #4 " src="https://github.com/user-attachments/assets/10718d90-7638-4b85-a8e2-3eee2c4f1da8" />
+
+
+##
+
+### 5. Delete a line
+
+Remove the line containing `System Administration`.
+
+**_Command used:_** `dd`  
+
+**The resulting contents:**
+
+<img width="602" height="97" alt="Day 6 #5 " src="https://github.com/user-attachments/assets/e73aa5ab-1ae6-4144-a3b4-584c9a695581" />
+
+
+##
+
+### 6. Search within a text file
+
+Open a suitable text file containing enough lines to make manually locating text inconvenient. Find a specific word or phrase within the file.
+
+**_Command use:_** `vim services`, and `/server\c`
+
+**The word or phrase you located and the line on which it appears:**  
+`server` and `line 32`
+
+<img width="1097" height="308" alt="Day 6 #6 " src="https://github.com/user-attachments/assets/aef64024-37d6-4d0a-810d-7de144b3dc6e" />
+
+
+##
+
+### 7. Make a backup
+
+Create a backup copy of `day6-notes.txt` named `day6-notes.bak`.
+
+**The names and locations of both files:*
+`day6-notes.txt` and `day6-notes.bak`  
+`/home/tonelo4/day6-notes.txt` and `home/tonelo4/day6-notes.bak`
+
+<img width="900" height="92" alt="image" src="https://github.com/user-attachments/assets/580bdd07-9da3-4ff0-a9a7-962e353f7d8a" />
+
+
+##
+
+### 8. Compare two files
+
+Modify `day6-notes.txt` so that it differs from `day6-notes.bak`.
+
+Determine exactly what changed between the two files.
+
+**A description of the difference:**  
+Today's date was added to the `day6-notes.txt` file on line 4 and saved. cat was run on both the .txt file and the .bak backup to show the .txt with the added date and .bak without. ls -l was also ran to show that the file size was now larger with the .txt compared to the .bak.
+
+<img width="597" height="247" alt="Day 6 #8 " src="https://github.com/user-attachments/assets/016005f0-c3e6-4104-a5e5-317c1bc124df" />
+
+
+##
+
+### 9. Edit a system configuration file safely
+
+Locate a configuration file under `/etc` that is appropriate for inspection.
+
+Make a backup of it **before making any changes**. Add a harmless comment to the configuration file, then verify that the comment was added.
+
+**Submit:** The file you selected and the location of your backup.
+
+**Important:** Do not modify an active setting or otherwise change system behavior.
+
+---
+
+### 10. Recover from a mistake
+
+Using `day6-notes.txt`, deliberately make a small change and then restore the file to its previous contents using the backup you created earlier.
+
+**Submit:** Evidence that the restored file matches the backup.
+
+### Practical Challenge — Configuration Investigation
+
+Choose a configuration file under `/etc` that you have permission to read.
+
+Using a text editor and other tools available on the server:
+
+1. Determine what the file controls.
+2. Identify three configuration settings.
+3. Identify any comments explaining those settings.
+4. Make a backup.
+5. Add a harmless comment identifying that you inspected the file.
+6. Save the change.
+7. Verify that the change persisted.
+
+**Submit:** The filename, a brief description of its purpose, and the final contents of the added comment.
+
 
 
