@@ -722,7 +722,6 @@ Today's date was added to the `day6-notes.txt` file on line 4 and saved. cat was
 
 <img width="597" height="247" alt="Day 6 #8 " src="https://github.com/user-attachments/assets/016005f0-c3e6-4104-a5e5-317c1bc124df" />
 
-
 ##
 
 ### 9. Edit a system configuration file safely
@@ -735,15 +734,21 @@ Make a backup of it **before making any changes**. Add a harmless comment to the
 
 <img width="962" height="46" alt="Day 6 #9-1 " src="https://github.com/user-attachments/assets/4bbb58b1-78b3-4d97-846d-75d9f98a3093" />
 
+
 <img width="847" height="47" alt="Day 6 #9-2" src="https://github.com/user-attachments/assets/0530f262-d5cf-43bf-b46f-92ee238572c4" />
+
 
 <img width="1140" height="497" alt="Day 6 #9-3" src="https://github.com/user-attachments/assets/6f817b87-be68-4940-9db8-60f34a5641d1" />
 
+
 <img width="1352" height="575" alt="Day 6 #9-4" src="https://github.com/user-attachments/assets/adae5e6e-1e9e-4e93-8691-503b22e149b4" />
+
 
 <img width="1241" height="582" alt="Day 6 #9-5" src="https://github.com/user-attachments/assets/7e0fef93-df70-4c90-b810-b6503311aff4" />
 
-<img width="857" height="42" alt="Day 6 #9-6" src="https://github.com/user-attachments/assets/a2d7a7ec-8b32-49d0-bedc-aec4bea20d6f" />
+
+<img width="857" height="42" alt="Day 6 #9-6" src="https://github.com/user-attachments/assets/a2d7a7ec-8b32-49d0-bedc-aec4bea20d6f" />  
+
 
 **Important:** Do not modify an active setting or otherwise change system behavior.
 
@@ -753,7 +758,22 @@ Make a backup of it **before making any changes**. Add a harmless comment to the
 
 Using `day6-notes.txt`, deliberately make a small change and then restore the file to its previous contents using the backup you created earlier.
 
-**Submit:** Evidence that the restored file matches the backup.
+**Evidence that the restored file matches the backup:**
+
+<img width="876" height="280" alt="Day 6 #10-1" src="https://github.com/user-attachments/assets/9181bc0b-9c4c-4066-b757-dff38d05e39f" />
+
+
+<img width="945" height="220" alt="Day 6 #10-2" src="https://github.com/user-attachments/assets/5a50ae2e-d3b5-45a6-844c-4129753056ea" />
+
+
+<img width="935" height="230" alt="Day 6 #10-3" src="https://github.com/user-attachments/assets/8e783ff6-8b09-4a8f-bcdf-f1eaa7412066" />
+
+
+<img width="905" height="52" alt="Day 6 #10-4" src="https://github.com/user-attachments/assets/4640e3da-a57a-43cc-9e7e-6b82bef1e7f7" />
+
+
+##
+
 
 ### Practical Challenge — Configuration Investigation
 
