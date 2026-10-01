@@ -774,7 +774,6 @@ Using `day6-notes.txt`, deliberately make a small change and then restore the fi
 
 ##
 
-
 ### Practical Challenge — Configuration Investigation
 
 Choose a configuration file under `/etc` that you have permission to read.
@@ -782,14 +781,21 @@ Choose a configuration file under `/etc` that you have permission to read.
 Using a text editor and other tools available on the server:
 
 1. Determine what the file controls.
-2. Identify three configuration settings.
-3. Identify any comments explaining those settings.
-4. Make a backup.
-5. Add a harmless comment identifying that you inspected the file.
-6. Save the change.
-7. Verify that the change persisted.
+<img width="1442" height="207" alt="Day 6 practical challenge-1" src="https://github.com/user-attachments/assets/1162833b-889b-4ed3-9ba9-7dcb9c783604" />
 
-**Submit:** The filename, a brief description of its purpose, and the final contents of the added comment.
+2. and 3. Identify three configuration settings and Identify any comments explaining those settings.
+<img width="1002" height="451" alt="Day 6 practical challenge-2 and 3" src="https://github.com/user-attachments/assets/f1cf58f3-886a-4b64-8806-64e3c8f4d74b" />
+
+4. Make a backup.
+<img width="1097" height="45" alt="Day 6 practical challenge-4" src="https://github.com/user-attachments/assets/d0178444-23ae-49f1-b581-e39d786fcbf7" />
+
+<img width="757" height="145" alt="Day 6 practical challenge-4-1" src="https://github.com/user-attachments/assets/c82e83f4-416b-459d-8d7f-3246d887a7b0" />
+
+
+5., 6., and 7. Add a harmless comment identifying that you inspected the file, Save the change, and Verify that the change persisted.
+<img width="1090" height="561" alt="Day 6 practical challenge-5-7" src="https://github.com/user-attachments/assets/46bc0682-3e7e-48bf-aadf-7202c857c01c" />
+
+##
 
 
 
