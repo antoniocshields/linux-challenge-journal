@@ -731,11 +731,23 @@ Locate a configuration file under `/etc` that is appropriate for inspection.
 
 Make a backup of it **before making any changes**. Add a harmless comment to the configuration file, then verify that the comment was added.
 
-**Submit:** The file you selected and the location of your backup.
+**The file you selected and the location of your backup:** `crontab` and `/etc/crontab`
+
+<img width="962" height="46" alt="Day 6 #9-1 " src="https://github.com/user-attachments/assets/4bbb58b1-78b3-4d97-846d-75d9f98a3093" />
+
+<img width="847" height="47" alt="Day 6 #9-2" src="https://github.com/user-attachments/assets/0530f262-d5cf-43bf-b46f-92ee238572c4" />
+
+<img width="1140" height="497" alt="Day 6 #9-3" src="https://github.com/user-attachments/assets/6f817b87-be68-4940-9db8-60f34a5641d1" />
+
+<img width="1352" height="575" alt="Day 6 #9-4" src="https://github.com/user-attachments/assets/adae5e6e-1e9e-4e93-8691-503b22e149b4" />
+
+<img width="1241" height="582" alt="Day 6 #9-5" src="https://github.com/user-attachments/assets/7e0fef93-df70-4c90-b810-b6503311aff4" />
+
+<img width="857" height="42" alt="Day 6 #9-6" src="https://github.com/user-attachments/assets/a2d7a7ec-8b32-49d0-bedc-aec4bea20d6f" />
 
 **Important:** Do not modify an active setting or otherwise change system behavior.
 
----
+##
 
 ### 10. Recover from a mistake
 
