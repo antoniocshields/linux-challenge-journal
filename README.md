@@ -1143,3 +1143,132 @@ For each exposed service, record:
 * Whether the service is intentionally exposed
 
 **Submit:** Your completed inventory.
+
+##
+
+## Day 10 — Bash Scripting & Automation
+
+### 1. Create your first script
+
+Create a shell script in your home directory named `day10.sh`.
+
+When executed, it should display a short greeting containing your username.
+
+**Submit:** The script's contents and evidence that it executes successfully.
+
+---
+
+### 2. Accept an argument
+
+Modify the script so that it accepts a person's name as an argument and greets that person.
+
+For example, supplying `Alex` should produce a greeting addressed to Alex.
+
+**Submit:** The script and an example execution.
+
+---
+
+### 3. Report system information
+
+Modify the script so that it displays:
+
+* The current username
+* The current date and time
+* The server's hostname
+* The current system uptime
+
+**Submit:** Example output from executing the script.
+
+---
+
+### 4. Check whether a file exists
+
+Modify the script so that it accepts a filename as an argument and reports whether that file exists.
+
+Test it with:
+
+1. A file that exists.
+2. A filename that does not exist.
+
+**Submit:** The output from both tests.
+
+---
+
+### 5. Check a directory
+
+Extend the script so that it distinguishes between:
+
+* An existing regular file
+* An existing directory
+* A path that does not exist
+
+**Submit:** Example output demonstrating all three cases.
+
+---
+
+### 6. Process multiple files
+
+Create a directory containing at least five test files.
+
+Modify your script so that it examines every file in that directory and reports the name and size of each one.
+
+**Submit:** The script and example output.
+
+---
+
+### 7. Automate log inspection
+
+Modify the script so that it examines a system or web-server log and reports how many lines contain the word `error`, without regard to capitalization.
+
+**Submit:** The script and resulting count.
+
+---
+
+### 8. Add an error condition
+
+Modify the script so that it checks whether the log file supplied as an argument actually exists.
+
+If it does not exist, the script should display an appropriate error message and terminate without attempting to process the nonexistent file.
+
+**Submit:** Example output for both a valid and invalid filename.
+
+---
+
+### 9. Make the script executable
+
+Configure your script so that it can be executed directly rather than explicitly invoking a shell interpreter each time.
+
+**Submit:** The command you use to execute it and evidence that it works.
+
+---
+
+### 10. Combine everything
+
+Create a script named `server-report.sh` that accepts a directory as an argument and produces a report containing:
+
+* The directory being examined
+* Whether the directory exists
+* The number of regular files it contains
+* The number of subdirectories it contains
+* The total amount of disk space occupied by those files
+* The name and size of the largest regular file
+
+If the supplied path does not exist or is not a directory, produce an appropriate error message instead.
+
+**Submit:** The script and output from running it against a real directory on your server.
+
+## Practical Challenge — Automated Server Check
+
+Create a script that performs a basic health check of your server.
+
+It should independently determine:
+
+1. Whether the server has been running.
+2. Whether the filesystem containing `/` has available space.
+3. Whether the web server is running.
+4. Whether the expected website is responding.
+5. Whether the web-server log contains recent errors.
+
+The script should produce a concise human-readable report and return a **successful exit status only when all checks pass**.
+
+##
