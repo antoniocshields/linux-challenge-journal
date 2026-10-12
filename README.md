@@ -1048,3 +1048,98 @@ The file should contain **only the extracted IP addresses**, rather than the com
 
 ##
 
+## Day 9 — Networking & Firewalls
+
+### 1. Identify listening ports
+
+Determine which TCP ports currently have services listening on your server.
+
+**Submit:** The port numbers and the service associated with each one.
+
+---
+
+### 2. Identify the owning processes
+
+For each publicly accessible listening TCP port you found, determine which process is responsible for it.
+
+**Submit:** Port number, process name, and process ID.
+
+---
+
+### 3. Examine network exposure
+
+Determine which listening services are bound only to the local machine and which are potentially reachable through the server's network interfaces.
+
+**Submit:** One example of each, if both exist.
+
+---
+
+### 4. Scan the server
+
+Perform a port scan against the server itself.
+
+**Submit:** Every open TCP port discovered and the service associated with each.
+
+---
+
+### 5. Compare two views
+
+Compare the results of your local inspection of listening sockets with the results of your port scan.
+
+**Submit:** Any differences you find and a brief explanation of why the two methods might produce different results.
+
+---
+
+### 6. Inspect the firewall
+
+Determine whether a host-based firewall is currently active and identify its existing rules.
+
+**Submit:** Whether it is active and a summary of its current inbound rules.
+
+---
+
+### 7. Protect SSH
+
+Before modifying the firewall, establish a second SSH session to the server and keep both sessions open.
+
+Create a copy to the server's current firewall configuration. 
+
+Now, configure the server's firewall so that SSH remains accessible while unsolicited incoming connections to the HTTP service are blocked.
+
+After your changes, test creating a 3rd SSH connection. Do not close either existing SSH session until you have verified that a new SSH connection can also be established successfully.
+
+Try to be very careful with this challenge, as you can risk completely blocking access to your own server.  If you lock yourself out, you may have to destroy the server and create a new one.
+
+Submit: The firewall rule(s) you added and evidence that a new SSH connection succeeds.
+
+---
+
+### 8. Verify the firewall externally
+
+From a separate machine, attempt to access the server's web service after applying the firewall change.
+
+**Submit:** Whether the connection succeeds or fails.
+
+---
+
+### 9. Restore web access
+
+Modify the firewall configuration so that the web server is accessible again while SSH remains permitted.
+
+**Submit:** Evidence that the website is reachable and that SSH remains allowed.
+
+---
+
+### 10. Security inventory
+
+Create a short inventory of the network services currently exposed by your server.
+
+For each exposed service, record:
+
+* Port
+* Protocol
+* Service
+* Process
+* Whether the service is intentionally exposed
+
+**Submit:** Your completed inventory.
