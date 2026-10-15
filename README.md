@@ -1272,3 +1272,162 @@ It should independently determine:
 The script should produce a concise human-readable report and return a **successful exit status only when all checks pass**.
 
 ##
+
+## Day 11 — Finding Things
+
+### 1. Locate a known file
+
+Find the system's SSH server configuration file.
+
+**Submit:** The complete path to the file.
+
+---
+
+### 2. Search for recently modified files
+
+Create three files in your home directory:
+
+* `day11-old.txt`
+* `day11-recent.txt`
+* `day11-newest.txt`
+
+Then modify `day11-old.txt` so that its modification time is more than **3 days in the past**. Leave the other two files with their current timestamps.
+
+Search your home directory for files modified within the **last 3 days**.
+
+**Submit:** The files returned by your search.
+
+---
+
+### 3. Find by filename pattern
+
+Create the following files inside `~/day11-test/`:
+
+```text
+report.txt
+report.old
+report.txt.bak
+notes.txt
+```
+
+Find all files whose names end in `.txt`.
+
+**Submit:** The complete paths of the matching files.
+
+---
+
+### 4. Find by size
+
+Inside `~/day11-test/`, create:
+
+* One file smaller than 1 KB
+* One file between 1 KB and 10 KB
+* One file larger than 10 KB
+
+Find the file larger than 10 KB without explicitly specifying its filename.
+
+**Submit:** Its path and size.
+
+---
+
+### 5. Find files containing specific text
+
+Create these three files:
+
+```text
+~/day11-test/server1.txt
+~/day11-test/server2.txt
+~/day11-test/server3.txt
+```
+
+Put the word `Permission` into `server1.txt` and `server3.txt`, but not `server2.txt`.
+
+Search the directory tree to determine which files contain the word `Permission`.
+
+**Submit:** The matching filenames.
+
+---
+
+### 6. Search configuration files recursively
+
+Find where the SSH configuration specifies the setting controlling whether root is permitted to log in directly.
+
+**Submit:**
+
+* The configuration file containing the setting
+* The exact configuration line
+
+Do not assume the location of the configuration file beforehand.
+
+---
+
+### 7. Case-insensitive recursive search
+
+Modify the three test files from Question 5 so that they contain different capitalization of the word `Permission`:
+
+* One contains `Permission`
+* One contains `permission`
+* One contains `PERMISSION`
+
+Perform a single recursive search that finds all three.
+
+**Submit:** The three matching files.
+
+---
+
+### 8. Deal with permission errors
+
+Search the `/var` directory for files named `access.log`.
+
+Perform the search as your normal user.
+
+If permission-denied messages appear, repeat the search while ensuring those messages do not obscure the actual search results.
+
+**Submit:** The paths of all matching files and a brief explanation of how you dealt with the unwanted error output.
+
+---
+
+### 9. Identify command locations
+
+Determine where the system is finding each of these commands:
+
+* `grep`
+* `vi`
+* `service`
+* `reboot`
+
+**Submit:** The complete path returned for each command.
+
+Then determine which directories containing those executables are included in your current command-search path.
+
+---
+
+### 10. Find the required files
+
+The Day 11 lesson's practical task is to **find all files containing the word `Permission`**. ([Linux Upskill Challenge][1])
+
+To make this reproducible on a fresh server, first create the following test environment:
+
+```text
+~/day11-permissions/
+├── config/
+│   ├── server.conf
+│   └── database.conf
+├── logs/
+│   ├── access.log
+│   └── errors.log
+└── notes/
+    └── notes.txt
+```
+
+Put the word `Permission` into exactly **four** of these files, with different capitalization in at least two of them.
+
+Now search the entire `day11-permissions` directory tree for files containing the word, regardless of capitalization.
+
+**Submit:**
+
+* The four matching files
+* The matching lines from each file
+* The search operation you used
+
+##
