@@ -1431,3 +1431,188 @@ Now search the entire `day11-permissions` directory tree for files containing th
 * The search operation you used
 
 ##
+
+## Day 12 — Transferring Files
+
+### 1. Establish an SFTP connection
+
+From your own computer, establish an SFTP connection to your Linux server using the same account you normally use for SSH.
+
+**Submit:** Evidence that you successfully connected and the username of the remote account.
+
+---
+
+### 2. Explore the remote filesystem
+
+Using your SFTP client, navigate through the server's filesystem.
+
+Locate:
+
+* Your home directory
+* `/etc`
+* `/var/log`
+
+**Submit:** The complete paths of all three locations.
+
+---
+
+### 3. Download a file from your server
+
+Using your SFTP client, download the following file from the server to your local computer:
+
+```text
+/etc/hostname
+```
+
+Open the downloaded file locally.
+
+**Submit:** The contents of the downloaded file.
+
+---
+
+### 4. Download a log file
+
+Using your SFTP client, navigate to `/var/log` and download one ordinary text-based log file to your local computer.
+
+Do **not** modify or delete the original server file.
+
+**Submit:**
+
+* The name of the log file
+* Its size on the server
+* Its size on your local computer
+
+---
+
+### 5. Create a local file
+
+On your **local computer**, create a text file named:
+
+```text
+day12-upload.txt
+```
+
+Put the following information into it:
+
+```text
+Linux Upskill Challenge
+Day 12
+File Transfer Test
+```
+
+**Submit:** The contents of the local file.
+
+---
+
+### 6. Upload a file
+
+Using your SFTP client, upload `day12-upload.txt` into your home directory on the server.
+
+Then use your SSH connection to verify that the file arrived.
+
+**Submit:** The complete path of the uploaded file and its contents.
+
+---
+
+### 7. Create a remote directory
+
+Using your SFTP client, create a directory named:
+
+```text
+day12-images
+```
+
+inside your home directory.
+
+**Submit:** The complete path of the new directory.
+
+---
+
+### 8. Upload multiple files
+
+On your local computer, create two additional files:
+
+```text
+image-1.txt
+image-2.txt
+```
+
+Put different text into each file so that you can distinguish them.
+
+Upload both files into `day12-images`.
+
+**Submit:** A listing showing both files on the server.
+
+---
+
+### 9. Test permissions
+
+Using your SFTP client, navigate to the root directory `/`.
+
+Attempt to create a directory named:
+
+```text
+day12-test
+```
+
+**Submit:** What happened and why you were or were not permitted to create it.
+
+Do **not** use administrative privileges for this operation.
+
+The lesson specifically uses this exercise to demonstrate that an ordinary user can manage files in their own home directory but cannot create arbitrary directories at the filesystem root. ([Linux Upskill Challenge][1])
+
+---
+
+### 10. Synchronize a backup
+
+Create a directory on your local computer named:
+
+```text
+day12-backup
+```
+
+Using a file-transfer/synchronization tool covered by the lesson, synchronize the contents of your server's `day12-images` directory into the local `day12-backup` directory.
+
+Then:
+
+1. Add a third file to `day12-images` on the server.
+2. Run the synchronization again.
+3. Verify that the new file appears in the local backup.
+4. Delete the third file from the server.
+5. Synchronize again.
+6. Verify that the local backup reflects the deletion.
+
+**Submit:**
+
+* The final contents of the server directory.
+* The final contents of the local backup.
+* A brief explanation of what synchronization accomplished.
+
+---
+
+## Practical Challenge — Round-Trip Transfer
+
+Starting with the fresh server and your local computer:
+
+1. Create a text file locally.
+2. Upload it to the server.
+3. Modify the server copy.
+4. Download the modified copy under a different local filename.
+5. Compare the original and modified versions locally.
+6. Create a second server directory containing both versions.
+7. Synchronize that directory back to your local computer.
+
+**Submit:**
+
+* The original local file.
+* The modified downloaded file.
+* The final server directory structure.
+* The final local backup structure.
+
+### Assessment emphasis
+
+This assessment deliberately avoids requiring students to install an additional file-transfer service. The course specifically teaches **SFTP over SSH**, noting that it requires no additional server setup and allows remote directory browsing, file transfers, and directory creation. ([Linux Upskill Challenge][1])
+
+For Windows students, the course's Day 12 resources identify **WinSCP or FileZilla** as suitable clients; macOS users can use **Cyberduck or FileZilla**, while Linux users have SFTP support available directly. ([Linux Upskill Challenge][1])
+
+[1]: https://linuxupskillchallenge.org/12/?utm_source=chatgpt.com "Day 12 - Transferring files - Linux Upskill Challenge"
