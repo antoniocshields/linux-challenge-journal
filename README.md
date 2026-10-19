@@ -1616,3 +1616,141 @@ This assessment deliberately avoids requiring students to install an additional 
 For Windows students, the course's Day 12 resources identify **WinSCP or FileZilla** as suitable clients; macOS users can use **Cyberduck or FileZilla**, while Linux users have SFTP support available directly. ([Linux Upskill Challenge][1])
 
 [1]: https://linuxupskillchallenge.org/12/?utm_source=chatgpt.com "Day 12 - Transferring files - Linux Upskill Challenge"
+
+##
+
+# Day 13 — Users and Groups Assessment
+
+### 1. Create a new user
+
+Create a new account named `helptest`.
+
+Give the account a password and ensure that it receives its own home directory.
+
+**Submit:** The username and the complete path to its home directory.
+
+---
+
+### 2. Inspect the user database
+
+Determine where Linux stores its ordinary user-account information.
+
+Locate the record belonging to `helptest`.
+
+**Submit:** The file containing the record and the complete record for `helptest`.
+
+---
+
+### 3. Inspect group membership
+
+Determine which groups `helptest` currently belongs to.
+
+**Submit:** The complete list of groups.
+
+---
+
+### 4. Create a group
+
+Create a group named `developers`.
+
+**Submit:** Evidence that the group now exists and its group ID.
+
+---
+
+### 5. Create a user directly in a group
+
+Create another user named `devtest`.
+
+Configure the account so that `developers` is one of its groups from the time the account is created.
+
+**Submit:** The username and the complete list of groups to which `devtest` belongs.
+
+---
+
+### 6. Add an existing user to a group
+
+Add `helptest` to the `developers` group without removing any groups it already belongs to.
+
+**Submit:** The complete group membership of `helptest` after the change.
+
+---
+
+### 7. Test ordinary-user privileges
+
+Switch into the `helptest` account.
+
+While operating as that user, attempt to perform an administrative operation such as restarting the server.
+
+**Submit:** The result and an explanation of why the operation did or did not succeed.
+
+Return to your normal administrative account afterward.
+
+---
+
+### 8. Grant full sudo access
+
+Configure `helptest` so that it has the same broad administrative capability as your original administrative account.
+
+Switch into `helptest` and verify that it can successfully perform an administrative operation.
+
+**Submit:** Evidence of the successful administrative operation.
+
+---
+
+### 9. Create a restricted administrator
+
+Create a third user named `reboottest`.
+
+Configure its privileges so that it **may execute the system's reboot operation with elevated privileges, but does not receive general sudo access**.
+
+Verify both conditions:
+
+1. `reboottest` can reboot the server using its permitted elevated operation.
+2. `reboottest` cannot use elevated privileges to perform an unrelated administrative operation.
+
+**Submit:** The relevant sudo configuration and the results of both tests.
+
+Use the system's validated sudoers-editing mechanism rather than directly editing the sudoers file; the lesson specifically introduces this safeguard because an invalid sudoers configuration can lock administrators out. ([Linux Upskill Challenge][1])
+
+---
+
+### 10. Inspect the credential databases
+
+Investigate the three standard text databases used for Linux users, groups, and password information.
+
+For each, determine:
+
+* Its filename
+* What information it contains
+* Whether an ordinary user can read it
+* Whether elevated privileges are required
+
+**Submit:** Your findings for all three.
+
+The Day 13 lesson explicitly introduces `/etc/passwd`, `/etc/group`, and `/etc/shadow` and uses their permissions to illustrate the distinction. ([Linux Upskill Challenge][1])
+
+## Practical Challenge — Help-Desk User
+
+Create a new user named `helper`.
+
+Configure `helper` to represent a help-desk employee who should be able to:
+
+* Check whether the server is running.
+* Check available disk space.
+* Reboot the server.
+
+`helper` **must not** receive unrestricted administrative access.
+
+Test each permitted operation while logged in as `helper`, then attempt at least one unrelated administrative operation that should be denied.
+
+**Submit:**
+
+* `helper`'s group membership.
+* The sudo configuration that grants the required privilege.
+* Evidence that each permitted operation works.
+* Evidence that an unrelated administrative operation is denied.
+* A brief explanation of why this configuration grants less authority than membership in the normal administrative/sudo group.
+
+This mirrors the Day 13 lesson's central exercise: creating a trusted helper account while using **groups and narrowly scoped sudo rules rather than automatically granting full root privileges**. ([Linux Upskill Challenge][1])
+
+[1]: https://linuxupskillchallenge.org/13/?utm_source=chatgpt.com "Day 13 - Users and Groups - Linux Upskill Challenge"
