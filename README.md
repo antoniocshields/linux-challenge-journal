@@ -1754,3 +1754,172 @@ Test each permitted operation while logged in as `helper`, then attempt at least
 This mirrors the Day 13 lesson's central exercise: creating a trusted helper account while using **groups and narrowly scoped sudo rules rather than automatically granting full root privileges**. ([Linux Upskill Challenge][1])
 
 [1]: https://linuxupskillchallenge.org/13/?utm_source=chatgpt.com "Day 13 - Users and Groups - Linux Upskill Challenge"
+
+##
+
+# Day 14 — Who Has Permission?
+
+### 1. Inspect ownership
+
+Create a text file named `day14-test.txt` in your home directory and put at least one line of text in it.
+
+Determine:
+
+* The file's owner
+* The file's group owner
+* Its complete permission string
+
+**Submit:** All three values.
+
+---
+
+### 2. Change the owner to root
+
+Using `day14-test.txt`, change its **user ownership to `root`** while leaving its group ownership unchanged.
+
+Verify the result.
+
+**Submit:** The file's owner and group after the change.
+
+---
+
+### 3. Change the group owner
+
+Create a new group named `day14group`.
+
+Change `day14-test.txt` so that `day14group` becomes its group owner while `root` remains its user owner.
+
+**Submit:** The resulting owner and group.
+
+---
+
+### 4. Interpret UGO permissions
+
+Set `day14-test.txt` so that its permissions are exactly:
+
+```text
+-rw-r-----
+```
+
+Without changing ownership, explain what access is granted to:
+
+* The user owner
+* Members of the group owner
+* Everyone else
+
+**Submit:** Your interpretation of all three permission categories.
+
+---
+
+### 5. Test read access
+
+Create a second user named `day14user`.
+
+Using `day14-test.txt` with the permissions from Question 4, determine whether `day14user` can:
+
+* Read the file
+* Modify the file
+
+**Submit:** The result of each test and an explanation based on the file's UGO permissions.
+
+---
+
+### 6. Give the group write access
+
+Change the permissions on `day14-test.txt` so that:
+
+* The owner can read and write.
+* Members of `day14group` can read and write.
+* Others can only read.
+
+Verify the resulting permission string.
+
+**Submit:** The permission string.
+
+---
+
+### 7. Remove write permission
+
+Change `day14-test.txt` so that **neither the owner nor the group can write to it**, while the owner and group can still read it.
+
+Others should have no permissions.
+
+**Submit:** The resulting permission string and the result when you attempt to modify and save the file as its owner.
+
+This reproduces the lesson's demonstration that a file can appear editable in an editor while the save operation is rejected because the file is not writable. ([Linux Upskill Challenge][1])
+
+---
+
+### 8. Restore owner write access
+
+Restore only the owner's write permission to `day14-test.txt`.
+
+Do not give write permission back to the group or others.
+
+**Submit:** The resulting permission string.
+
+---
+
+### 9. Create a completely private file
+
+Create a second file named `secret.txt`.
+
+Configure it so that **the owner has no permissions at all**, and neither the group nor others have any permissions.
+
+**Submit:** The complete permission string and an explanation of what access each category now has.
+
+The Day 14 lesson specifically asks students to experiment with a file from which all permissions have been removed. ([Linux Upskill Challenge][1])
+
+---
+
+### 10. Ownership and permissions investigation
+
+Create three files:
+
+```text
+day14-a.txt
+day14-b.txt
+day14-c.txt
+```
+
+Configure them as follows:
+
+| File          | Owner  | Group        | Permissions                                                          |
+| ------------- | ------ | ------------ | -------------------------------------------------------------------- |
+| `day14-a.txt` | `root` | `day14group` | Owner: read/write; Group: read; Others: none                         |
+| `day14-b.txt` | `root` | `day14group` | Owner: read/write; Group: read/write; Others: read                   |
+| `day14-c.txt` | `root` | `day14group` | Owner: read/write/execute; Group: read/execute; Others: read/execute |
+
+**Submit:** A listing showing all three files and their resulting ownership and permission information.
+
+## Practical Challenge — Permission Troubleshooting
+
+Create a directory named `day14-lab` and place two text files inside it:
+
+```text
+day14-lab/
+├── public.txt
+└── private.txt
+```
+
+Configure the files so that:
+
+`public.txt` can be read by its owner, its group, and everyone else, but only its owner can modify it.
+
+`private.txt` can be read and modified only by its owner.
+
+Then use `day14user` to test access to both files.
+
+**Submit:**
+
+* Owner and group of each file
+* Permission string of each file
+* Whether `day14user` can read each file
+* Whether `day14user` can modify each file
+* An explanation connecting each result to the **user/group/other** permission bits
+
+### Optional Extension
+
+The official Day 14 lesson places **ACLs, SELinux, and AppArmor** in the extension material rather than the core lesson. They would therefore be better treated as optional bonus questions rather than required assessment items. ([Linux Upskill Challenge][1])
+
+[1]: https://linuxupskillchallenge.org/14/ "Day 14 - Who has permission? - Linux Upskill Challenge"
