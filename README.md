@@ -1923,3 +1923,169 @@ Then use `day14user` to test access to both files.
 The official Day 14 lesson places **ACLs, SELinux, and AppArmor** in the extension material rather than the core lesson. They would therefore be better treated as optional bonus questions rather than required assessment items. ([Linux Upskill Challenge][1])
 
 [1]: https://linuxupskillchallenge.org/14/ "Day 14 - Who has permission? - Linux Upskill Challenge"
+
+##
+
+## Day 15 — Deeper into Repositories
+
+**Recommended assessment environment:** Ubuntu Server 24.04 LTS, matching the repository examples used throughout the current Day 15 lesson. This also makes the `netperf`/Multiverse exercises deterministic; on newer Ubuntu releases, `netperf` has moved to Universe. ([Linux Upskill Challenge][1])
+
+### 1. Inspect your configured repositories
+
+Determine which package repositories and repository components are currently configured on the server.
+
+**Submit:**
+
+* The repository addresses currently configured.
+* The Ubuntu release/suite they correspond to.
+* The components currently enabled.
+
+---
+
+### 2. Count available packages
+
+Determine approximately how many packages are currently available through your configured repositories.
+
+**Submit:** The number you obtained and a brief description of how you determined it.
+
+---
+
+### 3. Identify an additional repository component
+
+Determine whether the **Multiverse** component is currently enabled.
+
+If it is **not** enabled, enable it.
+
+If it is already enabled on your fresh server, document that fact and proceed.
+
+**Submit:** The components enabled before and after this task.
+
+---
+
+### 4. Refresh the package information
+
+After changing the repository configuration, update the server's local information about available packages.
+
+**Submit:** Evidence that the package information was successfully refreshed.
+
+---
+
+### 5. Find a package
+
+Using the package-management tools, investigate the package named **`netperf`**.
+
+Determine:
+
+* Whether it is available.
+* Its candidate version.
+* Which repository/component provides it.
+
+**Submit:** All three values.
+
+`netperf` is specifically used by the Day 15 lesson as an example of a package provided by an additional Ubuntu repository component. ([Linux Upskill Challenge][1])
+
+---
+
+### 6. Determine where a package comes from
+
+Before installing `netperf`, investigate the package information far enough to determine **which configured repository would supply the install candidate**.
+
+**Submit:** The repository location, suite, component, and candidate version.
+
+---
+
+### 7. Install the repository package
+
+Install `netperf` using the normal high-level package-management system.
+
+After installation, verify that the package is installed.
+
+**Submit:** The installed version.
+
+---
+
+### 8. Remove the additional repository component
+
+Remove/disable the additional repository component you enabled in Question 3.
+
+Then refresh the package information again.
+
+**Do not uninstall `netperf`.**
+
+Verify whether the already-installed package remains installed.
+
+**Submit:**
+
+* The repository configuration after removal.
+* Whether `netperf` remains installed.
+* An explanation of the difference between an installed package and the repository from which it was obtained.
+
+---
+
+### 9. Install a `.deb` without using the normal repository installation workflow
+
+You will need a `.deb` file for this task.
+
+**Fresh-server setup:**
+
+1. Open the official Ubuntu package page for `netperf`:
+   `https://packages.ubuntu.com/noble/amd64/netperf`
+2. Download the `.deb` file appropriate for **Ubuntu 24.04 / Noble / your server's architecture**.
+3. Save it in `~/day15-lab/`.
+
+The official package archive provides the downloadable package and identifies `netperf` as a Multiverse package for Noble. ([Ubuntu Packages][2])
+
+Now remove the installed `netperf` package.
+
+Install the downloaded `.deb` **without using the normal repository-based installation operation**.
+
+**Submit:**
+
+* The filename of the downloaded package.
+* The installed version.
+* Evidence that the package is now installed.
+
+---
+
+### 10. Investigate the consequences of repository choices
+
+Using the package information available on the server, compare these two situations:
+
+**A.** Installing a package from an enabled official repository.
+
+**B.** Installing a downloaded `.deb` directly.
+
+Determine what information the high-level package manager provides about dependencies and repository availability in each case.
+
+**Submit:** A short comparison based on your actual observations.
+
+## Practical Challenge — Repository Administrator
+
+Starting from the fresh server:
+
+1. Record the current repository configuration.
+2. Enable an additional official Ubuntu repository component.
+3. Refresh the package database.
+4. Find `netperf`.
+5. Determine its candidate version and source.
+6. Install it normally.
+7. Remove the additional repository component.
+8. Verify that the installed package remains present.
+9. Remove the package.
+10. Download the corresponding `.deb` from the official Ubuntu package archive.
+11. Install the `.deb` directly using the lower-level Debian package mechanism.
+12. Verify the resulting installation.
+
+**Submit:**
+
+* Before-and-after repository configuration.
+* Package source and candidate version.
+* Evidence of both installation methods.
+* A brief explanation of why a system administrator might prefer an official repository over manually installed packages.
+
+This closely follows the actual Day 15 progression: **understand repository configuration → enable additional sources → locate packages → understand where packages originate → distinguish APT from `dpkg` → understand the risks and tradeoffs of packages outside the normal repository system.** ([linuxupskillchallenge.org][1])
+
+[1]: https://linuxupskillchallenge.org/15/ "Day 15 - Deeper into repositories - Linux Upskill Challenge"
+[2]: https://packages.ubuntu.com/netperf?utm_source=chatgpt.com "Ubuntu – Package Search Results -- netperf"
+
+##
