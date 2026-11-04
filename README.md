@@ -2089,3 +2089,137 @@ This closely follows the actual Day 15 progression: **understand repository conf
 [2]: https://packages.ubuntu.com/netperf?utm_source=chatgpt.com "Ubuntu – Package Search Results -- netperf"
 
 ##
+
+# Day 16 — Archiving and Compressing
+
+## Preparation: Create the test files
+
+Before beginning the assessment, run the following setup instructions on your server. These create the practice files and directories; they do not perform any archiving or compression.
+
+
+```terminal commands begin
+mkdir -p "$HOME/day16-lab/source/reports" \
+  "$HOME/day16-lab/source/config" \
+  "$HOME/day16-lab/extracted-tar" \
+  "$HOME/day16-lab/extracted-tarball"
+
+cat > "$HOME/day16-lab/source/README.txt" <<'EOF'
+Linux Upskill Challenge - Day 16
+Sample data for archiving and compression practice.
+These are test files, not production system files.
+EOF
+
+cat > "$HOME/day16-lab/source/config/app.conf" <<'EOF'
+environment=training
+retention_days=7
+status=enabled
+EOF
+
+: > "$HOME/day16-lab/source/reports/daily-report.txt"
+for i in $(seq 1 100); do
+  printf 'Linux Upskill Challenge Day 16: repeated sample data for compression practice.\n' \
+    >> "$HOME/day16-lab/source/reports/daily-report.txt"
+done
+(terminal commands end)
+```
+
+
+This creates three files in a nested directory structure, including a repetitive text file that should compress effectively.
+
+## Assessment questions
+
+### 1. Inspect the source files
+
+Examine the contents of `~/day16-lab/source/`.
+
+Submit: The directory structure, names of all three files, and the size of each file.
+##
+
+### 2. Compress an individual file
+
+Compress `daily-report.txt` using a Linux compression utility. Preserve the original uncompressed file.
+
+Submit: The names of the original and compressed files, and evidence that both exist.
+##
+
+### 3. Measure compression effectiveness
+
+Compare the original report's size with the size of its compressed version.
+
+Calculate the percentage reduction in size.
+
+Submit: Both sizes and the percentage reduction. Briefly explain why the repetitive text is suitable for compression.
+##
+
+### 4. Restore a compressed file
+
+Restore the compressed report to its original, uncompressed form in a separate location without overwriting the original report.
+
+Submit: The restored file's path and evidence that its contents match the original.
+##
+
+### 5. Create an uncompressed archive
+
+Package the entire `source` directory into a single archive named `day16-source.tar`. Preserve the directory hierarchy, and save the archive outside the `source` directory.
+
+Submit: The archive's path and size.
+##
+
+### 6. Inspect an archive before extraction
+
+Examine `day16-source.tar` without extracting it.
+
+Submit: The list of archived files and their directory paths. Identify whether the archive preserves the original directory structure.
+##
+
+### 7. Extract an archive safely
+
+Extract `day16-source.tar` into `~/day16-lab/extracted-tar/`.
+
+Submit: The resulting directory tree and evidence that all three files were recovered.
+##
+
+### 8. Create a compressed tarball
+
+Package the complete `source` directory into a single gzip-compressed tar archive named `day16-source.tar.gz`.
+
+Perform the archiving and compression as one operation, rather than creating an uncompressed archive and compressing it in a separate step.
+
+Submit: The resulting filename, size, and evidence that it contains the expected files.
+##
+
+### 9. Extract and verify a compressed tarball
+
+Before extracting `day16-source.tar.gz`, inspect its contents to ensure the archived paths are appropriate.
+
+Then extract it into `~/day16-lab/extracted-tarball/`.
+
+Submit: The resulting directory tree and evidence that the extracted files match the original source files.
+##
+
+### 10. Distinguish archiving from compression
+
+Compare these three items:
+
+- `daily-report.txt`
+- `day16-source.tar`
+- `day16-source.tar.gz`
+
+Submit:
+
+1. The size of each item.
+2. Which item contains multiple files packaged together.
+3. Which item uses compression to reduce storage requirements.
+4. An explanation of why creating an archive alone does not necessarily reduce the total amount of stored data.
+##
+
+## Practical challenge — Create and verify a backup
+
+Using the supplied `source` directory, create a compressed backup suitable for transferring to another server.
+
+The backup must preserve the nested directory structure and the contents of all three files.
+
+Before extracting the backup, inspect its contents. Then extract it into a new destination directory and verify that the restored files match the originals.
+
+Submit: The backup's filename and size, its contents listing, and evidence that the restored files match the source.
+##
