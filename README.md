@@ -2223,3 +2223,101 @@ Before extracting the backup, inspect its contents. Then extract it into a new d
 
 Submit: The backup's filename and size, its contents listing, and evidence that the restored files match the source.
 ##
+
+# Day 17 — Build from the Source
+
+## Preparation
+
+Use your own training server. No pre-existing source archives or generated files are required.
+
+For any downloads, use the official Nmap project website: [Nmap Download Page](https://nmap.org/download.html?utm_source=chatgpt.com). Its source-code section provides the current source archive and installation documentation.
+
+
+## Assessment questions
+
+### 1. Establish a baseline
+
+Determine whether Nmap is installed on your server.
+
+If it is not installed, obtain the distribution-provided version using the normal package-management system.
+
+Submit: The installed version and the complete path of the executable being used.
+
+### 2. Prepare the build environment
+
+Determine whether your server has the compiler and other basic tools needed to build software from source.
+
+Install any missing prerequisites using the distribution's package-management system.
+
+Submit: The build tools you needed and evidence that they are available.
+
+### 3. Obtain the source code
+
+Visit the official Nmap download page. Find the current stable source-code archive for Linux and download it into your home directory using a command-line download utility.
+
+Submit: The archive's filename, version, size, and download location.
+
+### 4. Extract the source archive
+
+Extract the downloaded archive into your home directory.
+
+Submit: The name of the resulting source directory and the names of three files or directories inside it.
+
+### 5. Read the installation documentation
+
+Inspect the documentation supplied with the source code.
+
+Determine the intended sequence of steps for preparing, compiling, and installing the software.
+
+Submit: The names of the relevant documentation files and a brief description of each build stage.
+
+### 6. Prepare the source for compilation
+
+Run the project's configuration procedure for your server's environment.
+
+Submit: Evidence that configuration completed, along with any significant warnings or missing dependencies reported.
+
+### 7. Compile Nmap
+
+Build the software from the extracted source.
+
+Submit: Evidence that compilation completed successfully and the version reported by the newly built executable.
+
+### 8. Install the compiled software
+
+Install the source-built version so that it is available system-wide. Use administrative privileges only where necessary.
+
+Submit: The installed executable's complete path and its reported version.
+
+### 9. Locate and compare both versions
+
+Determine whether the repository-installed and source-installed versions of Nmap both exist.
+
+If the server's filename-indexing utility is not installed, install it before using it for this exercise.
+
+Update its index so that recently installed files can be found. Then locate the Nmap executables and determine which version is selected when you invoke Nmap by name.
+
+Submit: The paths and versions of both executables, and an explanation of why the default version is selected.
+
+### 10. Investigate maintenance implications
+
+Determine whether the source-installed version is tracked by the normal package manager.
+
+Explain what you would need to do to keep this version secure and up to date.
+
+Submit: Evidence of its package-management status and a brief explanation of the ongoing maintenance responsibilities.
+
+## Practical Challenge — Two Versions, One Server
+
+Using the source-built and repository-installed versions of Nmap:
+
+1. Identify both installations.
+2. Compare their versions.
+3. Determine which executable your shell selects by default.
+4. Demonstrate how to run each version independently.
+5. Explain what happens to the source-installed version when the distribution's package database is refreshed.
+6. Describe one reason to install software from source and one reason to prefer a distribution package.
+
+Submit: The executable paths, version information, and a short technical report.
+##
+
