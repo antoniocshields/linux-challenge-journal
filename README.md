@@ -2243,6 +2243,8 @@ If it is not installed, obtain the distribution-provided version using the norma
 
 Submit: The installed version and the complete path of the executable being used.
 
+##
+
 ### 2. Prepare the build environment
 
 Determine whether your server has the compiler and other basic tools needed to build software from source.
@@ -2251,17 +2253,23 @@ Install any missing prerequisites using the distribution's package-management sy
 
 Submit: The build tools you needed and evidence that they are available.
 
+##
+
 ### 3. Obtain the source code
 
 Visit the official Nmap download page. Find the current stable source-code archive for Linux and download it into your home directory using a command-line download utility.
 
 Submit: The archive's filename, version, size, and download location.
 
+##
+
 ### 4. Extract the source archive
 
 Extract the downloaded archive into your home directory.
 
 Submit: The name of the resulting source directory and the names of three files or directories inside it.
+
+##
 
 ### 5. Read the installation documentation
 
@@ -2271,11 +2279,15 @@ Determine the intended sequence of steps for preparing, compiling, and installin
 
 Submit: The names of the relevant documentation files and a brief description of each build stage.
 
+##
+
 ### 6. Prepare the source for compilation
 
 Run the project's configuration procedure for your server's environment.
 
 Submit: Evidence that configuration completed, along with any significant warnings or missing dependencies reported.
+
+##
 
 ### 7. Compile Nmap
 
@@ -2283,11 +2295,15 @@ Build the software from the extracted source.
 
 Submit: Evidence that compilation completed successfully and the version reported by the newly built executable.
 
+##
+
 ### 8. Install the compiled software
 
 Install the source-built version so that it is available system-wide. Use administrative privileges only where necessary.
 
 Submit: The installed executable's complete path and its reported version.
+
+##
 
 ### 9. Locate and compare both versions
 
@@ -2299,6 +2315,8 @@ Update its index so that recently installed files can be found. Then locate the 
 
 Submit: The paths and versions of both executables, and an explanation of why the default version is selected.
 
+##
+
 ### 10. Investigate maintenance implications
 
 Determine whether the source-installed version is tracked by the normal package manager.
@@ -2306,6 +2324,8 @@ Determine whether the source-installed version is tracked by the normal package 
 Explain what you would need to do to keep this version secure and up to date.
 
 Submit: Evidence of its package-management status and a brief explanation of the ongoing maintenance responsibilities.
+
+##
 
 ## Practical Challenge — Two Versions, One Server
 
